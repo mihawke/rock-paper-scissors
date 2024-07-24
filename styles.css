@@ -1,0 +1,29 @@
+#choices>.rock {
+    /* background-color: gray; */
+    height: 200px;
+    width: auto;
+    border: 2px solid silver;
+    padding: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#choices>.paper {
+    /* background-color: gray; */
+    height: 200px;
+    width: auto;
+    border: 2px solid silver;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+#choices>.scissors {
+    /* background-color: gray; */
+    height: 200px;
+    width: auto;
+    border: 2px solid silver;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 20px;
+}
