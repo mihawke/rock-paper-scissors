@@ -1,29 +1,192 @@
-#choices>.rock {
-    /* background-color: gray; */
-    height: 200px;
-    width: auto;
-    border: 2px solid silver;
-    padding: 5px;
-    border-radius: 20px;
-    cursor: pointer;
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#choices>.paper {
-    /* background-color: gray; */
-    height: 200px;
-    width: auto;
-    border: 2px solid silver;
-    padding: 5px;
-    cursor: pointer;
-    border-radius: 20px;
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
 }
 
-#choices>.scissors {
-    /* background-color: gray; */
-    height: 200px;
-    width: auto;
-    border: 2px solid silver;
-    padding: 5px;
+/* Game Container */
+.game-container {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Title */
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* options Section */
+.options {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.options img {
+    width: 80px;
+    height: 80px;
     cursor: pointer;
-    border-radius: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.options img:hover {
+    transform: scale(1.1);
+}
+
+/* Result Section */
+.result {
+    background-color: #f7f8fc;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 100%;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.result h4 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.result span {
+    font-weight: bold;
+}
+
+/* Score Section */
+.score {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    color: 'f4a261';
+    margin-top: 1rem;
+}
+
+.score h4 {
+    margin: 0;
+}
+
+dialog {
+    width: 300px; /* or whatever width you prefer */
+    padding: 20px;
+    border-radius: 10px;
+    position: fixed;  /* Makes sure the dialog stays on the screen */
+    top: 50%;         /* Positions the dialog vertically in the middle */
+    left: 50%;        /* Positions the dialog horizontally in the middle */
+    transform: translate(-50%, -50%);  /* Centers the dialog based on its size */
+    z-index: 1000;    /* Ensures the dialog appears above other content */
+  }
+  
+
+/* Buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.1rem;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Restart Button */
+#restart {
+    background-color: #ff5722;
+}
+
+#restart:hover {
+    background-color: #e64a19;
+}
+
+/* End Game Button */
+#endGame {
+    background-color: #2196F3;
+}
+
+#endGame:hover {
+    background-color: #1976D2;
+}
+
+/* Results Section */
+.results {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 1rem;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.results h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.results h4 {
+    font-size: 1.2rem;
+}
+
+.controllButtons {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .options {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .options img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .result,
+    .results {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .score h4 {
+        font-size: 1rem;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
 }

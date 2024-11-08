@@ -12,12 +12,15 @@
 <body>
     <div class="game-container" id="game">
         <h1 class="title">Rock Paper Scissors</h1>
-        <div class="choices" id="choices">
-            <img id="rock" class="rock" src="./assets/rock.png" alt="Rock">
-            <img id="paper" class="paper" src="./assets/paper.png" alt="Paper">
-            <img id="scissors" class="scissors" src="./assets/scissors.png" alt="Scissors">
+        <div class="options" id="options">
+            <img id="rock" class="rock" src="./assets/rock.png" alt="Rock" draggable="false">
+            <img id="paper" class="paper" src="./assets/paper.png" alt="Paper" draggable="false">
+            <img id="scissors" class="scissors" src="./assets/scissors.png" alt="Scissors" draggable="false">
         </div>
         <div class="result" id="result">
+            <div>
+                <h4>Round No: <span id="rounds">0</span></h4>
+            </div>
             <div>
                 <h4>Player Choice: <span id="playerChoice"></span></h4>
                 <h4>Computer Choice: <span id="computerChoice"></span></h4>
@@ -25,13 +28,16 @@
             <div>
                 <h4>Result: <span id="gameResult"></span></h4>
             </div>
-            <div>
-                <h4>Round No: <span id="rounds">0</span></h4>
-            </div>
             <div class="score">
-                <h4>Player Score: <span id="playerScore">0</span></h4>
-                <h4>Computer Score: <span id="computerScore">0</span></h4>
+                <h4>Player: <span id="playerScore">0</span></h4>
+                <h4>Computer: <span id="computerScore">0</span></h4>
             </div>
+        </div>
+        <dialog>
+        </dialog>
+        <div class="controllButtons">
+            <button id="endGame">EndGame</button>
+            <button id="restart">Restart</button>
         </div>
     </div>
 </body>

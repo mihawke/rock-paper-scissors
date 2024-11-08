@@ -1,12 +1,67 @@
-const choices = document.querySelectorAll("#choices img");
-
+const choices = document.querySelectorAll("#options img");
 const gameResult = document.getElementById("gameResult");
 const playerChoiceDiv = document.getElementById("playerChoice")
 const computerChoiceDiv = document.getElementById("computerChoice")
 const playerScoreDiv = document.getElementById("playerScore")
 const computerScoreDiv = document.getElementById("computerScore")
 const roundsDiv = document.getElementById("rounds")
+const restartBtn = document.getElementById("restart")
+const resultDialog = document.querySelector("dialog")
+const endgameBtn = document.getElementById("endGame")
 
+let humanScore = 0;
+let computerScore = 0;
+let rounds = 0;
+
+endgameBtn.addEventListener('click', () => {
+    // Clear previous content inside resultDialog
+    resultDialog.innerHTML = '';
+
+    const resultDiv = document.createElement('div');
+    const roundsDiv = document.createElement('div');
+    const playerScoreDiv = document.createElement('div');
+    const computerScoreDiv = document.createElement('div');
+
+    if (humanScore > computerScore) {
+        roundsDiv.textContent = `Total Rounds: ${rounds}`;
+        playerScoreDiv.textContent = `Player: ${humanScore}`;
+        computerScoreDiv.textContent = `Computer: ${computerScore}`;
+        resultDiv.textContent = 'You Win!';
+    }
+    else if (humanScore == computerScore) {
+        roundsDiv.textContent = `Total Rounds: ${rounds}`;
+        playerScoreDiv.textContent = `Player: ${humanScore}`;
+        computerScoreDiv.textContent = `Computer: ${computerScore}`;
+        resultDiv.textContent = "It's a tie!";
+    }
+    else {
+        roundsDiv.textContent = `Total Rounds: ${rounds}`;
+        playerScoreDiv.textContent = `Player: ${humanScore}`;
+        computerScoreDiv.textContent = `Computer: ${computerScore}`;
+        resultDiv.textContent = 'You Lose!';
+    }
+
+    // Append the new result and show the dialog
+    resultDialog.appendChild(resultDiv);
+    resultDialog.appendChild(roundsDiv);
+    resultDialog.appendChild(playerScoreDiv);
+    resultDialog.appendChild(computerScoreDiv);
+
+    resultDialog.showModal();
+});
+
+
+restartBtn.addEventListener('click', () => {
+    humanScore = 0;
+    computerScore = 0;
+    rounds = 0;
+    roundsDiv.textContent = 0;
+    gameResult.textContent = ``
+    playerChoiceDiv.textContent = ``
+    computerChoiceDiv.textContent = ``
+    playerScoreDiv.textContent = 0
+    computerScoreDiv.textContent = 0
+})
 choices.forEach((image) =>
     image.addEventListener("click", () => {
         rounds += 1;
@@ -52,7 +107,3 @@ function playRound(humanChoice, computerChoice) {
     }
 
 }
-
-let humanScore = 0;
-let computerScore = 0;
-let rounds = 0;
